@@ -81,20 +81,19 @@ public class TeleOp extends LinearOpMode {
                 mech.Intake();
             }
 
-            if (gamepad2.a)
-            {
-                mech.Outtake();
-            }
 
-            else
-            {
+//            if (gamepad2.left_trigger > 0.1)
+//            {
+//                mech.Outtake();
+//            }
+
+            else {
                 mech.StopIntake();
-                mech.StopOuttake();
+                //mech.StopOuttake();
+
             }
 
 
         }
-
-
     }
 }
