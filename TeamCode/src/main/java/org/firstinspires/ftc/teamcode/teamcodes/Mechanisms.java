@@ -21,7 +21,7 @@ public class Mechanisms {
 
     public DcMotor intakeMotor;
 
-    //public DcMotor outtakeMotor;
+    public DcMotor outtakeMotor;
 
     private final LinearOpMode opMode;
 
@@ -34,29 +34,26 @@ public class Mechanisms {
         driveTrain = new DriveTrain(opMode);
         driveTrain.initDriveTrain(hardwareMap);
         intakeMotor = hardwareMap.get(DcMotor.class,"intakeMotor");
-//        outtakeMotor = hardwareMap.get(DcMotor.class,"outtakeMotor");
+        outtakeMotor = hardwareMap.get(DcMotor.class,"outtakeMotor");
     }
 
     public void Intake() {
         intakeMotor.setPower(-0.85);
+        outtakeMotor.setPower(0.3);
     }
 
-//    public void Outtake() {
-//        outtakeMotor.setPower(0.85);
-//
-//    }
+    public void Outtake() {
+        outtakeMotor.setPower(0.85);
+
+    }
 
     public void StopIntake() {
         intakeMotor.setPower(0);
     }
 
-//    public void ReverseIntake() {
-//        intakeMotor.setPower(0.85);
-//    }
-
-//    public void StopOuttake() {
-//        outtakeMotor.setPower(0);
-//    }
+    public void StopOuttake() {
+        outtakeMotor.setPower(0);
+    }
 }
 
 
